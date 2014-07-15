@@ -1,0 +1,24 @@
+{
+    "name": "mickgeek/yii2-actionbar",
+    "type": "yii2-extension",
+    "description": "Customizable bar with the drop-down list for manipulation selected GridView items and control buttons.",
+    "keywords": ["yii2", "extension", "widget", "grid", "dropdown", "bulk actions"],
+    "homepage": "https://github.com/mickgeek/yii2-actionbar",
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "Oleg Belostotskiy",
+            "email": "olgblst@gmail.com",
+            "homepage": "http://mickgeek.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "mickgeek\\actionbar\\": ""
+        }
+    }
+}
