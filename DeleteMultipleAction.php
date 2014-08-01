@@ -76,7 +76,7 @@ class DeleteMultipleAction extends Action
 
         /* @var $modelClass \yii\db\ActiveRecord */
         $modelClass = $this->modelClass;
-        $models = $modelClass::find()->where([$this->primaryKey => Yii::$app->request->post('ids')])->all();
+        $models = $modelClass::findAll([$this->primaryKey => Yii::$app->request->post('ids')]);
         if (empty($models)) {
             throw new NotFoundHttpException(Yii::t('yii', 'Page not found.'));
         } else {
