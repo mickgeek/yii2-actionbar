@@ -84,7 +84,7 @@ class Widget extends \yii\base\Widget
     /**
      * @var string the Bulk Actions ID.
      */
-    private $bulkActionsId = 'bulk-actions';
+    private $_bulkActionsId = 'bulk-actions';
 
     /**
      * @inheritdoc
@@ -145,7 +145,7 @@ class Widget extends \yii\base\Widget
                 ];
             }
             if (isset($this->bulkActionsOptions['id'])) {
-                $this->bulkActionsId = $this->bulkActionsOptions['id'];
+                $this->_bulkActionsId = $this->bulkActionsOptions['id'];
             }
             if (!isset($this->bulkActionsOptions['options'])) {
                 $this->bulkActionsOptions = ArrayHelper::merge($this->bulkActionsOptions, [
@@ -207,7 +207,7 @@ class Widget extends \yii\base\Widget
             $name = $matches[1];
             if (isset($this->elements[$name])) {
                 if ($name === 'bulk-actions' && $this->grid !== null) {
-                    $this->view->registerJs("$('#{$this->id} #{$this->bulkActionsId}').change(function() {
+                    $this->view->registerJs("$('#{$this->id} #{$this->_bulkActionsId}').change(function() {
                         if (this.value) {
                             var ids = $('#{$this->grid}').yiiGridView('getSelectedRows'),
                                 dataConfirm = this.options[this.selectedIndex].getAttribute('data-confirm'),
