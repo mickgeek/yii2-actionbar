@@ -99,9 +99,6 @@ class Widget extends \yii\base\Widget
         $this->registerTranslations();
         $this->initDefaultElements();
 
-        if ($this->registerCss) {
-            ActionBarAsset::register($this->view);
-        }
         Url::remember('', self::RETURN_URL_PARAM);
     }
 
@@ -193,6 +190,10 @@ class Widget extends \yii\base\Widget
         }
         echo $this->renderContainer ? Html::endTag('div') . "\n" : '';
         echo Html::endTag('div') . "\n";
+
+        if ($this->registerCss) {
+            ActionBarAsset::register($this->view);
+        }
     }
 
     /**
