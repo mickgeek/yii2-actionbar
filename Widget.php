@@ -93,8 +93,8 @@ class Widget extends \yii\base\Widget
     {
         parent::init();
 
-        if (isset($this->options['id'])) {
-            $this->setId($this->options['id']);
+        if (!isset($this->options['id'])) {
+            $this->options['id'] = $this->id;
         }
         $this->registerTranslations();
         $this->initDefaultElements();
@@ -158,7 +158,7 @@ class Widget extends \yii\base\Widget
             $this->elements['bulk-actions'] = Html::dropDownList('bulkactions', null, $this->bulkActionsItems,
                 ArrayHelper::merge([
                     'prompt' => $this->bulkActionsPrompt,
-                    'id' => 'bulk-actions',
+                    'id' => $this->_bulkActionsId,
                     'disabled' => $this->grid === null,
                 ], $this->bulkActionsOptions)
             );
@@ -177,7 +177,7 @@ class Widget extends \yii\base\Widget
      */
     public function run()
     {
-        echo Html::beginTag('div', ArrayHelper::merge(['id' => $this->id], $this->options)) . "\n";
+        echo Html::beginTag('div', $this->options) . "\n";
         echo $this->renderContainer ? Html::beginTag('div', $this->containerOptions) . "\n" : '';
         foreach ($this->templates as $template => $options) {
             if (!is_array($options)) {
@@ -208,7 +208,8 @@ class Widget extends \yii\base\Widget
             $name = $matches[1];
             if (isset($this->elements[$name])) {
                 if ($name === 'bulk-actions' && $this->grid !== null) {
-                    $this->view->registerJs("$('#{$this->id} #{$this->_bulkActionsId}').change(function() {
+                    $id = $this->options['id'];
+                    $this->view->registerJs("$('#{$id} #{$this->_bulkActionsId}').change(function() {
                         if (this.value) {
                             var ids = $('#{$this->grid}').yiiGridView('getSelectedRows'),
                                 dataConfirm = this.options[this.selectedIndex].getAttribute('data-confirm'),
