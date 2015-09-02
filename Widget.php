@@ -232,7 +232,7 @@ class Widget extends \yii\base\Widget
                                 $.each(ids, function(index, id) {
                                     form.append('<input type=\"hidden\" name=\"ids[]\" value=' + id + ' />');
                                 });
-                                form.submit();
+                                form.appendTo('body').submit();
                             }
                         }
                     });");
