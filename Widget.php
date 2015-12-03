@@ -107,14 +107,16 @@ class Widget extends \yii\base\Widget
      */
     public function registerTranslations()
     {
-        Yii::$app->i18n->translations['mickgeek/actionbar/*'] = [
-            'class' => PhpMessageSource::className(),
-            'sourceLanguage' => 'en-US',
-            'basePath' => '@mickgeek/actionbar/messages',
-            'fileMap' => [
-                'mickgeek/actionbar/widget' => 'widget.php',
-            ],
-        ];
+        if (!isset(Yii::$app->i18n->translations['mickgeek/actionbar/*'])) {
+            Yii::$app->i18n->translations['mickgeek/actionbar/*'] = [
+                'class' => PhpMessageSource::className(),
+                'sourceLanguage' => 'en-US',
+                'basePath' => '@mickgeek/actionbar/messages',
+                'fileMap' => [
+                    'mickgeek/actionbar/widget' => 'widget.php',
+                ],
+            ];
+        }
     }
 
     /**
