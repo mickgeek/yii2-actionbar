@@ -58,6 +58,3 @@ DeleteMultipleAction Class
 [renderTagAttributes()]:http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#renderTagAttributes()-detail
 [dropDownList()]:http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html#dropDownList()-detail
 [t()]:http://www.yiiframework.com/doc-2.0/yii-baseyii.html#t()-detail
-
-### CSRF validation
-For enable CSRF validation make sure you have ```<?= Html::csrfMetaTags() ?>``` in main layout.
