@@ -79,6 +79,9 @@ public function actions()
 
 > Tip: For information about properties and methods of the widget, see the bundled `DOCUMENTATION.md`.
 
+### CSRF validation
+For enable CSRF validation make sure you have ```<?= Html::csrfMetaTags() ?>``` in main layout.
+
 Examples
 --------
 
