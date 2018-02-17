@@ -214,9 +214,9 @@ class Widget extends \yii\base\Widget
                     $this->view->registerJs("$('#{$id} #{$this->_bulkActionsId}').change(function() {
                         if (this.value) {
                             var ids = $('#{$this->grid}').yiiGridView('getSelectedRows'),
-                                dataConfirm = this.options[this.selectedIndex].getAttribute('data-confirm'),
-                                opts = this.options[this.selectedIndex],
-                                url = opts.getAttribute('url');
+                                options = this.options[this.selectedIndex],
+                                dataConfirm = options.getAttribute('data-confirm'),
+                                url = options.getAttribute('url');
 
                             if (!ids.length) {
                                 alert('" . $this->t('widget', 'Please select one or more items from the list.') . "');
@@ -233,7 +233,7 @@ class Widget extends \yii\base\Widget
                                     form.append('<input type=\"hidden\" name=' + csrfParam + ' value=' + csrfToken + ' />');
                                 }
                                 $.each(ids, function(index, id) {
-                                    form.append('<input type=\"hidden\" name=\"' + (opts.getAttribute('name') ? opts.getAttribute('name') : 'ids') + '[]\" value=' + id + ' />');
+                                    form.append('<input type=\"hidden\" name=\"' + (options.getAttribute('name') ? options.getAttribute('name') : 'ids') + '[]\" value=' + id + ' />');
                                 });
                                 form.appendTo('body').submit();
                             }
