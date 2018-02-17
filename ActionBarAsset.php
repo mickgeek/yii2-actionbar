@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 /**
  * ActionBarAsset represents a collection of asset files, such as CSS, JS, images.
  *
- * @author Oleg Belostotskiy <olgblst@gmail.com>
+ * @author Oleg Belostotsky <olegbelostotsky@gmail.com>
  */
 class ActionBarAsset extends AssetBundle
 {

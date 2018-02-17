@@ -1,54 +1,18 @@
-Action Bar
-==========
+ActionBar
+=========
 
-Action Bar is a Yii 2 widget that render the drop-down list for manipulation selected GridView items and control buttons. The widget permits you to fully customize elements.
+ActionBar is a Yii 2 widget that render the drop-down list for manipulation selected the GridView items and control buttons. The widget permits you to fully customize elements.
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/8091481/3558541/f447ff48-093c-11e4-91ad-b784c929ed32.png)
 
 Installation
 ------------
 
-You can install the widget in two ways, using [Composer] or by downloading an archive file.
-
-### Installing via Composer
-
-Run the following commands under your application folder:
+You can install the widget using [Composer]. Just run the following command under your application folder:
 
 ```
-php composer.phar require --prefer-dist "mickgeek/yii2-actionbar *"
+php composer.phar require --prefer-dist mickgeek/yii2-actionbar
 ```
-
-> Note: You can just do `composer update --prefer-dist` if pre-adding the following to `require` section of your `composer.json`:
->
->     "mickgeek/yii2-actionbar": "*"
->
-
-### Installing from an Archive File
-
-Download [the archive file], unpack it to `path/to/app/vendor/mickgeek` folder and modify the main configuration file like this:
-
-```php
-$vendorDir = dirname(__DIR__) . '/vendor';
-
-return [
-    'vendorPath' => $vendorDir,
-    'extensions' => array_merge(
-        require($vendorDir . '/yiisoft/extensions.php'),
-        [
-            'mickgeek/yii2-actionbar' => [
-                'name' => 'mickgeek/yii2-actionbar',
-                'version' => '9999999-dev',
-                'alias' => [
-                    '@mickgeek/actionbar' => $vendorDir . '/mickgeek/yii2-actionbar',
-                ],
-            ],
-        ]
-    ),
-    ...
-];
-```
-
-where `$vendorDir` is the path to the directory that stores vendor files.
 
 Usage
 -----
@@ -78,9 +42,6 @@ public function actions()
 > Note: You can write your action without using `DeleteMultipleAction` class.
 
 > Tip: For information about properties and methods of the widget, see the bundled `DOCUMENTATION.md`.
-
-### CSRF validation
-For enable CSRF validation make sure you have ```<?= Html::csrfMetaTags() ?>``` in main layout.
 
 Examples
 --------
@@ -202,4 +163,3 @@ License
 This extension is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
 
 [Composer]:https://getcomposer.org
-[the archive file]:https://github.com/mickgeek/yii2-actionbar/archive/master.zip

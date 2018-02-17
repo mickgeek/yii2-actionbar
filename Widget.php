@@ -10,7 +10,7 @@ use yii\i18n\PhpMessageSource;
 /**
  * \mickgeek\actionbar\Widget renders the drop-down list to manipulation selected GridView items and control buttons.
  *
- * @author Oleg Belostotskiy <olgblst@gmail.com>
+ * @author Oleg Belostotsky <olegbelostotsky@gmail.com>
  */
 class Widget extends \yii\base\Widget
 {
@@ -29,7 +29,7 @@ class Widget extends \yii\base\Widget
      */
     public $options = ['class' => 'widget-action-bar'];
     /**
-     * @var boolean whether the action bar content should be included in a div container.
+     * @var boolean whether the widget content should be included in a div container.
      */
     public $renderContainer = true;
     /**
@@ -38,7 +38,7 @@ class Widget extends \yii\base\Widget
      */
     public $containerOptions = ['class' => 'row'];
     /**
-     * @var array templates used to render action bar elements, in addition, may be specified the array keys with
+     * @var array templates used to render widget elements, in addition, may be specified the array keys with
      * the HTML attributes for the container tag. Tokens enclosed within curly brackets are treated as
      * controller action IDs (also called *element names* in the context of action column). They will be replaced
      * by the corresponding element rendering values specified in [[elements]]. For example,
@@ -73,9 +73,9 @@ class Widget extends \yii\base\Widget
      * @var array the Bulk Actions options in terms of name-value pairs. The following attributes
      * for the select option tag are specially handled:
      *
-     * - url: string, used to send the array with the selected rows (based on the AJAX request) to the client
+     * - `url`: string, used to send the array with the selected rows (based on the AJAX request) to the client
      *   on the specified URL.
-     * - data-confirm: string, displays a confirm box before deleting selected items.
+     * - `data-confirm`: string, displays a confirm box before deleting selected items.
      *
      * @see \yii\helpers\Html::dropDownList() for details on how this is to be rendered.
      */

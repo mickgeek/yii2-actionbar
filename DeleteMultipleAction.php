@@ -10,7 +10,7 @@ use yii\helpers\Url;
 /**
  * DeleteMultipleAction deletes the selected rows of the GridView.
  *
- * @author Oleg Belostotskiy <olgblst@gmail.com>
+ * @author Oleg Belostotsky <olegbelostotsky@gmail.com>
  */
 class DeleteMultipleAction extends Action
 {

@@ -1,4 +1,4 @@
-Copyright &copy; 2014, Oleg Belostotskiy  
+Copyright &copy; 2014, Oleg Belostotsky
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
