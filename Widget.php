@@ -233,7 +233,7 @@ class Widget extends \yii\base\Widget
                                     form.append('<input type=\"hidden\" name=' + csrfParam + ' value=' + csrfToken + ' />');
                                 }
                                 $.each(ids, function(index, id) {
-                                    form.append('<input type=\"hidden\" name=\"' + (options.getAttribute('name') ? options.getAttribute('name') : 'ids') + '[]\" value=' + id + ' />');
+                                    form.append('<input type=\"hidden\" name=\"' + (options.getAttribute('name') ? options.getAttribute('name') : 'ids') + '[]\" value=' + JSON.stringify(id) + ' />');
                                 });
                                 form.appendTo('body').submit();
                             }

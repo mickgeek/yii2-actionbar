@@ -43,8 +43,6 @@ DeleteMultipleAction Class
 
   - `modelClass`: *string*, the model class name. This property must be set.
 
-  - `primaryKey`: *string*, the primary key name.
-
   - `beforeDeleteCallback`: *callable*, a callback that will be called after deleting selected items. The signature of the callback should be as `function ($action)`, where `$action` is the current action object.
 
   - `afterDeleteCallback`: *callable*, a callback that will be called after deleting selected items. The signature of the callback should be as `function ($action)`, where `$action` is the current action object.

@@ -6,6 +6,7 @@ use yii\base\Action;
 use yii\base\InvalidConfigException;
 use yii\web\NotFoundHttpException;
 use yii\helpers\Url;
+use yii\helpers\Json;
 
 /**
  * DeleteMultipleAction deletes the selected rows of the GridView.
@@ -18,10 +19,6 @@ class DeleteMultipleAction extends Action
      * @var string the model class name. This property must be set.
      */
     public $modelClass;
-    /**
-     * @var string the primary key name.
-     */
-    public $primaryKey = 'id';
     /**
      * @var callable a callback that will be called before deleting selected items.
      *
@@ -76,7 +73,10 @@ class DeleteMultipleAction extends Action
 
         /* @var $modelClass \yii\db\ActiveRecord */
         $modelClass = $this->modelClass;
-        $models = $modelClass::findAll([$this->primaryKey => Yii::$app->request->post('ids')]);
+        $models = [];
+        foreach (Yii::$app->request->post('ids') as $id) {
+            $models = array_merge($models, $modelClass::findAll(Json::decode($id)));
+        }
         if (empty($models)) {
             throw new NotFoundHttpException(Yii::t('yii', 'Page not found.'));
         } else {
